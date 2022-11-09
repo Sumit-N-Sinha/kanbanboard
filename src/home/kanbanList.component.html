@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header" style="display: flexbox;">
+        <h1>Kanban List</h1>
+        <div>
+        <input type="text" [(ngModel)]='kanbanFilter' >
+        <h1 class="btn btn-lg btn-block" (click)="filter()">Search</h1>
+        </div>
+    </div>
+    <div class="card-body" style="background-color: white;">
+        <div class="row" >
+            <div class="table-responsive" style="align-items: center; margin-left: 25%;margin-top: 5%;background-color: white;">
+                <table class="table" style="width: 50%; text-align: center;">
+                    <thead>
+                        <tr style="background-color: bisque;">
+                            <th style="width: 15%;">
+                                Kanban Id
+                            </th>
+                            <th >
+                                Kanban title
+                            </th>
+                            <th style="width: 25%;">
+                                Create Task
+                            </th>
+                            
+                            <th style="width: 25%;">
+                                Update Kanban
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let kanban of filtKanban" style="background-color: aqua;">          
+                            <td>{{kanban.id}}</td>
+                            <td>{{kanban.title}}</td>
+                            <td>
+                                <div class="btn btn-danger" type="button">Create
+                                </div>
+                            </td>
+                            <td>
+                                <div class="btn btn-danger" type="button">Update
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div style="text-align: center; margin-right: 50%;">
+                    <button class="btn btn-danger" (click)="goBack()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
